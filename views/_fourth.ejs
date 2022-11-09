@@ -1,0 +1,155 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="/css/resume2.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+
+<div class="main-page">
+  <div class="top">
+    <h1 class="Applicant_name"><%=info.name%></h1>
+    <div class="post">
+      <h3 class="Applicant_post"><%=info.position%></h3>
+    </div>
+  </div>
+  <div class="bottom">
+    <%if(selected=='2'){%>
+    <div class="left change-color2">
+      <%}else{%>
+      <div class="left"></div>
+      <%}%>
+      <div class="contact">
+        <div class="contact-body">
+          <div class="mail">
+            <div class="mail-icon"><i class="fas fa-envelope"></i></div>
+            <div class="mail-value" style="overflow-wrap: break-word">
+              <%=info.email%>
+            </div>
+          </div>
+          <div class="ph-num">
+            <div class="ph-num-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="ph-num-value"><%=info.phone%></div>
+          </div>
+          <div class="linked-in">
+            <div class="linkedin-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="linkedin-value"><%=info.link%></div>
+          </div>
+          <div class="location">
+            <div class="location-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="location-value"><%=info.address%></div>
+          </div>
+        </div>
+      </div>
+      <div class="skills">
+        <div class="skills-head">
+          <span>Skills</span>
+        </div>
+        <div class="skills-body">
+          <!-- <div class="skill1 skill">HTML5</div>
+          <div class="skill2 skill">CSS3</div>
+          <div class="skill3 skill">Javascript</div>
+          <div class="skill4 skill">C++</div>
+          <div class="skill5 skill">JAVA</div>
+          <div class="skill6 skill">Excellent Work Ethic</div>
+          <div class="skill7 skill">Team Player</div> -->
+          <%for (let i in skills){%>
+          <div class="skill<%=i%> skill"><%=skills[i]%></div>
+          <%}%>
+        </div>
+      </div>
+      <div class="languages">
+        <div class="lang-head">
+          <span>Languages Known</span>
+        </div>
+        <div class="skills-body">
+          <div class="skill1 skill"><%=lang.language_1%></div>
+          <div class="skill2 skill"><%=lang.language_2%></div>
+          <div class="skill3 skill"><%=lang.language_3%></div>
+        </div>
+      </div>
+
+      <div class="additional-info">
+        <div class="add-info-head">Additional Information</div>
+        <div class="add-info-body"><%=addInfo.Additional_information%></div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="summary">
+        <div class="summary-head">Resume Objective</div>
+        <div class="summary-body">
+          <span class="summary-content"><%=info.RESUME_OBJECTIVE%>.</span>
+        </div>
+      </div>
+      <div class="education">
+        <div class="education-head">Education</div>
+        <div class="education-body">
+          <div class="college">
+            <div class="college-name"><%=edu.school_name%></div>
+            <div class="college-detail">
+              <ul>
+                <li>Expected Year of Graduation: <%=edu.end_date%></li>
+                <li>Subjects Studied: <%=edu.degree_name%></li>
+                <li>Current CGPA: <%=edu.cgpa%></li>
+              </ul>
+            </div>
+          </div>
+          <div class="std12">
+            <div class="std12-name"><%=univ.university_name%></div>
+            <div class="std12-detail">
+              <ul>
+                <li>Year of Passing:<%=univ.programme_end%></li>
+                <li>Stream: <%=univ.programme_name%></li>
+                <li>Percentage:<%=univ.current_cgpa%></li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="std12">
+            <div class="std12-name">Loyola School</div>
+            <div class="std12-detail">
+              <ul>
+                <li>Year of Passing: 2017</li>
+                <li>Stream: Science</li>
+                <li>Percentage: 94.4%</li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="works">
+        <div class="work-head">Work Experience / Projects</div>
+        <div class="work-body">
+          <div class="work">
+            <div class="work-name"><%=exp.Title_1%></div>
+            <div class="work-detail">
+              <ul>
+                <li><%=exp.Experience_1%></li>
+              </ul>
+            </div>
+          </div>
+          <div class="work">
+            <div class="work-name"><%=exp.Title_2%></div>
+            <div class="work-detail">
+              <ul>
+                <li><%=exp.Experience_2%></li>
+              </ul>
+            </div>
+          </div>
+          <div class="work">
+            <div class="work-name"><%=exp.Title_3%></div>
+            <div class="work-detail">
+              <ul>
+                <li><%=exp.Experience_3%></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="achievements">
+        <div class="achievement-head">Achievements</div>
+        <div class="achievement-body"><%=ach.Achievement%></div>
+      </div>
+    </div>
+  </div>
+</div>
